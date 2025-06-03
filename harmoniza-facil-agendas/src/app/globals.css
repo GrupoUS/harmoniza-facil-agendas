@@ -1,0 +1,317 @@
+cgnRTXsYQ3X6KFQXMUGLkzg05O4sTl+RGOQ7v/Tqf4ZNGkFzi2BLxM0oZHQdIEdrY2lrNuKbVCUuWkt882bLGQ==/* Importar fonte Plus Jakarta Display */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cores do tema escuro */
+  --background: 13 13 18; /* #0d0d12 - Fundo principal escuro */
+  --foreground: 250 250 250; /* #fafafa - Texto principal claro */
+  
+  /* Cores secundárias */
+  --card: 20 20 26; /* #14141a - Fundo dos cards */
+  --card-foreground: 250 250 250; /* #fafafa - Texto dos cards */
+  
+  --popover: 20 20 26; /* #14141a */
+  --popover-foreground: 250 250 250; /* #fafafa */
+  
+  --primary: 45 40 15; /* Dourado escuro para fundos */
+  --primary-foreground: 13 13 18; /* Texto escuro sobre dourado */
+  
+  /* Cor dourada neon - inspirada no site TRINTAE3 */
+  --accent: 51 46 20; /* #332e14 - Fundo do accent */
+  --accent-foreground: 255 215 0; /* #ffd700 - Dourado neon brilhante */
+  
+  --secondary: 39 39 42; /* #27272a - Cinza escuro */
+  --secondary-foreground: 250 250 250; /* #fafafa */
+  
+  --muted: 39 39 42; /* #27272a */
+  --muted-foreground: 161 161 170; /* #a1a1aa - Cinza médio */
+  
+  --border: 39 39 42; /* #27272a - Bordas */
+  --input: 39 39 42; /* #27272a - Inputs */
+  --ring: 255 215 0; /* #ffd700 - Dourado para focus rings */
+  
+  /* Estados de feedback */
+  --destructive: 239 68 68; /* #ef4444 - Vermelho */
+  --destructive-foreground: 250 250 250; /* #fafafa */
+  
+  --success: 34 197 94; /* #22c55e - Verde */
+  --success-foreground: 250 250 250; /* #fafafa */
+  
+  --warning: 251 191 36; /* #fbbf24 - Amarelo */
+  --warning-foreground: 13 13 18; /* #0d0d12 */
+  
+  --info: 59 130 246; /* #3b82f6 - Azul */
+  --info-foreground: 250 250 250; /* #fafafa */
+  
+  /* Cores douradas customizadas */
+  --gold-primary: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-bright: #fcd34d;
+  --gold-dark: #d97706;
+  --gold-darker: #b45309;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Classes utilitárias customizadas */
+@layer utilities {
+  .text-gold {
+    color: var(--gold-primary);
+  }
+  
+  .text-gold-bright {
+    color: var(--gold-bright);
+  }
+  
+  .bg-gold {
+    background-color: var(--gold-primary);
+  }
+  
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+  }
+  
+  .border-gold {
+    border-color: var(--gold-primary);
+  }
+  
+  .shadow-gold {
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
+  }
+  
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5), 0 0 40px rgba(245, 158, 11, 0.3);
+  }
+  
+  .gradient-text-gold {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Componentes base */
+@layer components {
+  .btn-primary {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background-color: var(--gold-primary);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    background-color: #374151;
+    color: white;
+    border: 1px solid #4b5563;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #4b5563;
+  }
+  
+  .btn-outline {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--gold-primary);
+    color: #000;
+  }
+  
+  .card-dark {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    padding: 1.5rem;
+  }
+  
+  .input-dark {
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease;
+    background-color: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    width: 100%;
+  }
+  
+  .input-dark::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .input-dark:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+  }
+  
+  .heading-gold {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #fbbf24, #fcd34d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Animações customizadas */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Estados de loading */
+.loading-skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--muted));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Estados de foco melhorados */
+.focus-gold:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
+}
+
+/* Transições suaves */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efeitos de hover para cards */
+.card-hover:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 4px 14px 0 rgba(245, 158, 11, 0.15);
+}
+
+/* Gradiente de fundo para seções especiais */
+.bg-gradient-dark {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
+}
+
+/* Texto com brilho dourado */
+.text-glow-gold {
+  color: var(--gold-primary);
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+/* Bordas com gradiente dourado */
+.border-gradient-gold {
+  border: 1px solid transparent;
+  background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+              linear-gradient(135deg, var(--gold-primary), var(--gold-light)) border-box;
+}

@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "projectName": "Prática TRINTAE3",
+    "version": "1.0.0",
+    "description": "Aplicação web para gerenciar pacientes modelo para cursos de harmonização facial do GRUPO US",
+    "author": "GRUPO US",
+    "createdAt": "2025-06-02T15:51:00.000Z",
+    "updatedAt": "2025-06-02T15:51:00.000Z"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Configuração Inicial do Projeto",
+      "description": "Configurar a estrutura base do projeto Next.js com TypeScript, Tailwind CSS e integração com Supabase",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [],
+      "details": "Criar projeto Next.js com TypeScript, configurar Tailwind CSS com tema escuro e cor dourada neon, configurar Supabase para autenticação e banco de dados. Implementar estrutura de pastas seguindo padrões do Next.js 13+ com App Router.",
+      "testStrategy": "Verificar se o projeto inicia corretamente, se o Tailwind está funcionando e se a conexão com Supabase está estabelecida.",
+      "subtasks": []
+    },
+    {
+      "id": 2,
+      "title": "Design System e Tema Visual",
+      "description": "Implementar o design system com tema escuro e cor dourada neon inspirada no site trintae3.drasacha.com.br",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [1],
+      "details": "Criar sistema de cores com tema escuro como base e dourado neon como cor de destaque. Implementar componentes base como botões, cards, inputs seguindo o padrão Horizon UI. Configurar tipografia e espaçamentos. Garantir responsividade para desktop, tablet e mobile.",
+      "testStrategy": "Verificar se todos os componentes seguem o tema definido, se a cor dourada está sendo aplicada corretamente nos elementos interativos e se a responsividade funciona em diferentes tamanhos de tela.",
+      "subtasks": []
+    },
+    {
+      "id": 3,
+      "title": "Estrutura do Banco de Dados Supabase",
+      "description": "Criar e configurar todas as tabelas necessárias no Supabase com relacionamentos e políticas RLS",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [1],
+      "details": "Criar tabelas: users (admin/client), patients, procedures, courses_availability, appointments. Configurar relacionamentos entre tabelas. Implementar Row Level Security (RLS) para proteger dados. Criar políticas de acesso para diferentes tipos de usuário.",
+      "testStrategy": "Testar inserção, consulta, atualização e exclusão de dados em todas as tabelas. Verificar se as políticas RLS estão funcionando corretamente para diferentes tipos de usuário.",
+      "subtasks": []
+    },
+    {
+      "id": 4,
+      "title": "Sistema de Autenticação",
+      "description": "Implementar sistema completo de autenticação com Supabase Auth",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [2, 3],
+      "details": "Implementar registro e login para clientes. Configurar autenticação de admin. Criar middleware para proteção de rotas. Implementar recuperação de senha (opcional para MVP). Gerenciar estados de autenticação globalmente.",
+      "testStrategy": "Testar registro de novos usuários, login, logout, proteção de rotas e recuperação de senha. Verificar se admins e clientes têm acesso apenas às suas respectivas áreas.",
+      "subtasks": []
+    },
+    {
+      "id": 5,
+      "title": "Dashboard Admin - Layout Principal",
+      "description": "Criar o layout principal do dashboard administrativo com navegação e estrutura base",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [2, 4],
+      "details": "Implementar layout responsivo com sidebar de navegação, header com informações do usuário, área principal de conteúdo. Criar navegação entre diferentes seções (Dashboard, Pacientes, Agendamentos, Procedimentos, Disponibilidade). Seguir padrão Horizon UI para organização visual.",
+      "testStrategy": "Verificar se a navegação funciona corretamente, se o layout é responsivo e se todos os elementos visuais seguem o design system definido.",
+      "subtasks": []
+    },
+    {
+      "id": 6,
+      "title": "Dashboard Admin - Calendário Principal",
+      "description": "Implementar o calendário principal do dashboard com visualização de agendamentos",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [5],
+      "details": "Criar calendário com visualização diária mostrando slots de 30 minutos. Implementar navegação entre dias. Mostrar agendamentos existentes com diferenciação visual entre agendamentos feitos por admin vs auto-agendados por clientes. Mostrar disponibilidade de horários.",
+      "testStrategy": "Testar navegação do calendário, visualização de agendamentos, diferenciação visual entre tipos de agendamento e responsividade do componente.",
+      "subtasks": []
+    },
+    {
+      "id": 7,
+      "title": "Gerenciamento de Pacientes",
+      "description": "Implementar CRUD completo para gerenciamento de pacientes modelo",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [5],
+      "details": "Criar interface para listar, adicionar, editar e visualizar pacientes. Campos: nome, telefone, email, procedimentos agendados, status de pagamento. Implementar busca e filtros. Integrar com banco de dados Supabase.",
+      "testStrategy": "Testar todas as operações CRUD, busca, filtros e integração com o banco de dados. Verificar validação de dados e tratamento de erros.",
+      "subtasks": []
+    },
+    {
+      "id": 8,
+      "title": "Gerenciamento de Procedimentos",
+      "description": "Implementar CRUD para gerenciamento de procedimentos de harmonização facial",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [5],
+      "details": "Criar interface para gerenciar lista de procedimentos disponíveis. Campos: nome do procedimento, descrição breve. Permitir adicionar, editar e remover procedimentos. Esta lista será usada tanto no agendamento manual quanto no auto-agendamento.",
+      "testStrategy": "Testar criação, edição e remoção de procedimentos. Verificar se os procedimentos aparecem corretamente nas interfaces de agendamento.",
+      "subtasks": []
+    },
+    {
+      "id": 9,
+      "title": "Gerenciamento de Disponibilidade",
+      "description": "Implementar sistema para definir disponibilidade de horários para cursos",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [5],
+      "details": "Criar interface para admins definirem datas e janelas de tempo quando cursos acontecem. Sistema deve gerar automaticamente slots de 30 minutos dentro dessas janelas. Permitir definir múltiplas janelas por dia e diferentes configurações por data.",
+      "testStrategy": "Testar criação de disponibilidades, geração automática de slots, edição e remoção de disponibilidades. Verificar se os slots aparecem corretamente no calendário.",
+      "subtasks": []
+    },
+    {
+      "id": 10,
+      "title": "Agendamento Manual (Admin)",
+      "description": "Implementar funcionalidade para admins criarem agendamentos manualmente",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [6, 7, 8, 9],
+      "details": "Criar interface para admins selecionarem data, horário, paciente e procedimentos para criar agendamento. Implementar validação para evitar conflitos de horário. Permitir edição de agendamentos existentes. Integrar com calendário principal.",
+      "testStrategy": "Testar criação de agendamentos, validação de conflitos, edição de agendamentos existentes e integração com o calendário.",
+      "subtasks": []
+    },
+    {
+      "id": 11,
+      "title": "Funcionalidade Drag & Drop",
+      "description": "Implementar arrastar e soltar para reagendar compromissos no calendário",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [10],
+      "details": "Permitir que admins arrastem agendamentos existentes para diferentes horários disponíveis no calendário. Implementar validação para garantir que o novo horário está disponível. Atualizar banco de dados automaticamente após o movimento.",
+      "testStrategy": "Testar funcionalidade de arrastar e soltar, validação de disponibilidade do novo horário e atualização correta no banco de dados.",
+      "subtasks": []
+    },
+    {
+      "id": 12,
+      "title": "Portal do Cliente - Autenticação",
+      "description": "Implementar páginas de registro e login para clientes (pacientes modelo)",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [4],
+      "details": "Criar páginas de registro e login específicas para clientes. Implementar validação de formulários. Configurar redirecionamento após login. Aplicar design system com tema escuro e elementos dourados.",
+      "testStrategy": "Testar registro de novos clientes, login, validação de formulários e redirecionamento correto após autenticação.",
+      "subtasks": []
+    },
+    {
+      "id": 13,
+      "title": "Portal do Cliente - Interface de Agendamento",
+      "description": "Criar interface para clientes visualizarem disponibilidade e fazerem auto-agendamento",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [12, 9, 8],
+      "details": "Implementar calendário ou lista de horários disponíveis para clientes. Permitir seleção de procedimentos desejados. Criar fluxo de confirmação de agendamento. Implementar validação para evitar duplo agendamento.",
+      "testStrategy": "Testar visualização de disponibilidade, seleção de procedimentos, processo de agendamento e validação de conflitos.",
+      "subtasks": []
+    },
+    {
+      "id": 14,
+      "title": "Confirmação e Notificações",
+      "description": "Implementar sistema de confirmação de agendamentos e notificações",
+      "status": "pending",
+      "priority": "low",
+      "dependencies": [13],
+      "details": "Mostrar confirmação na tela após agendamento bem-sucedido. Implementar notificações por email (opcional para MVP). Permitir que clientes visualizem seus agendamentos futuros (opcional para MVP).",
+      "testStrategy": "Testar confirmação de agendamento, envio de emails (se implementado) e visualização de agendamentos do cliente.",
+      "subtasks": []
+    },
+    {
+      "id": 15,
+      "title": "Otimização e Performance",
+      "description": "Otimizar aplicação para performance e carregamento rápido",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [14],
+      "details": "Otimizar consultas ao banco de dados. Implementar loading states. Otimizar imagens e assets. Configurar cache adequado. Minimizar bundle JavaScript. Implementar lazy loading onde apropriado.",
+      "testStrategy": "Medir tempos de carregamento, testar em diferentes dispositivos e conexões, verificar se loading states funcionam corretamente.",
+      "subtasks": []
+    },
+    {
+      "id": 16,
+      "title": "Testes e Deploy",
+      "description": "Realizar testes finais e preparar para deploy em produção",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": [15],
+      "details": "Realizar testes completos de todas as funcionalidades. Testar em diferentes navegadores e dispositivos. Configurar variáveis de ambiente para produção. Preparar documentação básica. Realizar deploy.",
+      "testStrategy": "Executar testes end-to-end, verificar compatibilidade cross-browser, testar em produção e validar todas as funcionalidades principais.",
+      "subtasks": []
+    }
+  ]
+}
