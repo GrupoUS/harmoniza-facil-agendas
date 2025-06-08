@@ -331,7 +331,7 @@ export default function AdminPanel() {
             <div className="h-6 w-px bg-gray-600"></div>
             <div className="flex items-center space-x-3">
               <Sparkles className="w-8 h-8 text-glow" />
-              <h1 className="text-2xl font-bold text-glow">Painel Admin - Harmoniza Fácil</h1>
+              <h1 className="text-2xl font-bold text-glow">Painel Admin - TRINTAE3</h1>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -380,7 +380,7 @@ export default function AdminPanel() {
       <footer className="border-t border-gray-700 px-6 py-4">
         <div className="flex items-center justify-between">
           <p className="text-gray-400 text-sm">
-            © 2025 GRUPO US - Harmoniza Fácil. Todos os direitos reservados.
+            © 2025 GRUPO US - Prática TRINTAE3. Todos os direitos reservados.
           </p>
           <div className="flex items-center space-x-2">
             <Sparkles className="w-4 h-4 text-glow" />

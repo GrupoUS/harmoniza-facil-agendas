@@ -47,7 +47,7 @@ export default function PatientPortal() {
           <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-amber-400 mb-2">⚡ Portal do Paciente</h1>
-              <p className="text-gray-400">Harmoniza Fácil - GRUPO US</p>
+              <p className="text-gray-400">TRINTAE3 - GRUPO US</p>
             </div>
 
             <div className="space-y-6">
@@ -119,7 +119,7 @@ export default function PatientPortal() {
               <span>Voltar ao Início</span>
             </Link>
             <div className="h-6 w-px bg-gray-600"></div>
-            <h1 className="text-2xl font-bold text-amber-400">⚡ Portal do Paciente - Harmoniza Fácil</h1>
+            <h1 className="text-2xl font-bold text-amber-400">⚡ Portal do Paciente - TRINTAE3</h1>
           </div>
           <div className="flex items-center space-x-4">
             <span className="text-gray-300">Maria Silva</span>
