@@ -1,0 +1,102 @@
+# SECRETS E CONFIGURACOES SENSIVEIS (NUNCA COMMITAR)
+env/
+*.token
+*.key
+*.secret
+**/secrets/
+**/*-secret.*
+**/*-token.*
+**/*-key.*
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Production builds
+.next/
+out/
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+*.lcov
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Temporary folders
+tmp/
+temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large files and databases
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Large files to avoid GitHub limits (CRITICAL)
+*.node
+*.so
+*.dll
+*.exe
+*.dmg
+*.pkg
+*.wasm
+**/next-swc.*
+**/*-msvc.*
+**/swc-*
+**/*win32-x64-msvc*
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Package lock files
+package-lock.json
+
+# Prisma
+prisma/dev.db*
+prisma/migrations/dev.db*
